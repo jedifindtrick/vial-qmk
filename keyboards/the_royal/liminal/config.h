@@ -8,6 +8,7 @@
 #define DEVICE_VER      0x0001
 #define MANUFACTURER    TheRoyalSweatshirt
 #define PRODUCT         Liminal
+#define VIAL_KEYBOARD_UID {0x64, 0x87, 0x9D, 0x67, 0x85, 0xA2, 0x85, 0xBF}
 
 /* key matrix size */
 #define MATRIX_ROWS 4
