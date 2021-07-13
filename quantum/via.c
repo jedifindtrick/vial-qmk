@@ -46,6 +46,7 @@
 #include "dynamic_keymap.h"
 #include "tmk_core/common/eeprom.h"
 #include "version.h"  // for QMK_BUILDDATE used in EEPROM magic
+#include "via_ensure_keycode.h"
 
 #ifdef VIAL_ENABLE
 #include "vial.h"
@@ -435,9 +436,8 @@ void raw_hid_receive(uint8_t *data, uint8_t length) {
         }
 #endif
         default: {
-            // The command ID is not known
-            // Return the unhandled state
-            *command_id = id_unhandled;
+            // The command ID is not known let the keyboard implement it
+            raw_hid_receive_kb(data, length);
             break;
         }
     }
